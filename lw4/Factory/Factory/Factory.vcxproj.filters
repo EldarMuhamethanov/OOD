@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="factory">
+      <UniqueIdentifier>{e90b72af-3045-4c1e-8dca-c36ace539dfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shape">
+      <UniqueIdentifier>{37a178f3-082a-4965-8080-4f7f33d8bef5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="painter">
+      <UniqueIdentifier>{8ba8696a-9761-4dd4-916c-25f5a55ac987}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="canvas">
+      <UniqueIdentifier>{fc5b1886-8271-4e6e-8b21-1747293a66dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="color">
+      <UniqueIdentifier>{75a232c6-719b-446a-a64b-0a35e9721da2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="designer">
+      <UniqueIdentifier>{b0e43155-0d9f-4fdd-a425-09781a1f5a63}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CPictureDraft.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="CRectangle.cpp">
+      <Filter>shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CTriangle.cpp">
+      <Filter>shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CEllipse.cpp">
+      <Filter>shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CShapeFactory.cpp">
+      <Filter>factory</Filter>
+    </ClCompile>
+    <ClCompile Include="CRegularPolygon.cpp">
+      <Filter>shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CShape.cpp">
+      <Filter>shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CPainter.cpp">
+      <Filter>painter</Filter>
+    </ClCompile>
+    <ClCompile Include="CCanvas.cpp">
+      <Filter>canvas</Filter>
+    </ClCompile>
+    <ClCompile Include="Factory.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>color</Filter>
+    </ClCompile>
+    <ClCompile Include="CDesigner.cpp">
+      <Filter>designer</Filter>
+    </ClCompile>
+    <ClCompile Include="IDesigner.h">
+      <Filter>designer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IShapeFactory.h">
+      <Filter>factory</Filter>
+    </ClInclude>
+    <ClInclude Include="CShape.h">
+      <Filter>shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CPictureDraft.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CRectangle.h">
+      <Filter>shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CTriangle.h">
+      <Filter>shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CEllipse.h">
+      <Filter>shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CShapeFactory.h">
+      <Filter>factory</Filter>
+    </ClInclude>
+    <ClInclude Include="CRegularPolygon.h">
+      <Filter>shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CPainter.h">
+      <Filter>painter</Filter>
+    </ClInclude>
+    <ClInclude Include="ICanvas.h">
+      <Filter>canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>color</Filter>
+    </ClInclude>
+    <ClInclude Include="CCanvas.h">
+      <Filter>canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>color</Filter>
+    </ClInclude>
+    <ClInclude Include="CDesigner.h">
+      <Filter>designer</Filter>
+    </ClInclude>
+    <ClInclude Include="IShape.h">
+      <Filter>shape</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="result.svg" />
+  </ItemGroup>
+</Project>

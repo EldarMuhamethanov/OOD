@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="InputStreams">
+      <UniqueIdentifier>{9d57d032-fcd7-4ece-bfff-a6018f8de9ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OutputStreams">
+      <UniqueIdentifier>{d89bc6b7-c1a2-4d84-9a98-bac6a86c0d62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Decoding">
+      <UniqueIdentifier>{b2be986e-a151-4c81-bafd-1fdb2dbb7a09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Compressing">
+      <UniqueIdentifier>{3483a101-5772-4c39-bae5-250e3245a60a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Encryptor">
+      <UniqueIdentifier>{ba979dfd-486d-43fb-85d2-fa7ebde24daa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Streams.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemoryInputStream.cpp">
+      <Filter>InputStreams</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileInputStream.cpp">
+      <Filter>InputStreams</Filter>
+    </ClCompile>
+    <ClCompile Include="CFileOutputStream.cpp">
+      <Filter>OutputStreams</Filter>
+    </ClCompile>
+    <ClCompile Include="CMemoryOutputStream.cpp">
+      <Filter>OutputStreams</Filter>
+    </ClCompile>
+    <ClCompile Include="CDecryptorInputStream.cpp">
+      <Filter>Decoding</Filter>
+    </ClCompile>
+    <ClCompile Include="CEncryptorOutputStream.cpp">
+      <Filter>Decoding</Filter>
+    </ClCompile>
+    <ClCompile Include="CCompressedOutputStream.cpp">
+      <Filter>Compressing</Filter>
+    </ClCompile>
+    <ClCompile Include="CDecompressedInputStream.cpp">
+      <Filter>Compressing</Filter>
+    </ClCompile>
+    <ClCompile Include="CStreamsOperationHandler.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Encryptor.cpp">
+      <Filter>Encryptor</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CFileInputStream.h">
+      <Filter>InputStreams</Filter>
+    </ClInclude>
+    <ClInclude Include="IInputDataStream.h">
+      <Filter>InputStreams</Filter>
+    </ClInclude>
+    <ClInclude Include="CFileOutputStream.h">
+      <Filter>OutputStreams</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemoryInputStream.h">
+      <Filter>InputStreams</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemoryOutputStream.h">
+      <Filter>OutputStreams</Filter>
+    </ClInclude>
+    <ClInclude Include="IOutputDataStream.h">
+      <Filter>OutputStreams</Filter>
+    </ClInclude>
+    <ClInclude Include="CDecryptorInputStream.h">
+      <Filter>Decoding</Filter>
+    </ClInclude>
+    <ClInclude Include="CEncryptorOutputStream.h">
+      <Filter>Decoding</Filter>
+    </ClInclude>
+    <ClInclude Include="CCompressedOutputStream.h">
+      <Filter>Compressing</Filter>
+    </ClInclude>
+    <ClInclude Include="CDecompressedInputStream.h">
+      <Filter>Compressing</Filter>
+    </ClInclude>
+    <ClInclude Include="CStreamsOperationHandler.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Encryptor.h">
+      <Filter>Encryptor</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt" />
+    <Text Include="output.txt" />
+    <Text Include="input.restored.txt" />
+  </ItemGroup>
+</Project>

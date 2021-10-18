@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="document">
+      <UniqueIdentifier>{ff907b63-f0df-4c6e-9670-9c12b43cf569}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="command">
+      <UniqueIdentifier>{866ae342-ce17-49d1-a5a6-02427b3f7a67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="image">
+      <UniqueIdentifier>{2e25273c-ebed-49ee-8103-37fe2e7c9eca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="paragraph">
+      <UniqueIdentifier>{2181e128-f612-4a06-97da-d2202be73fca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="menu">
+      <UniqueIdentifier>{0c94c0fe-aa68-4dd1-ad54-ea349b8061a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="history">
+      <UniqueIdentifier>{6ca1ae53-99d2-4e0d-a014-c5a9378b447a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="editor">
+      <UniqueIdentifier>{439d9395-58d4-4757-9220-e6b31d45ca99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="command\command">
+      <UniqueIdentifier>{9c036dd4-83fc-4a6a-bbad-30d66013e0d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="command\changeStringCommand">
+      <UniqueIdentifier>{78150ed2-33f6-4afb-9576-3128d1204a9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="command\setTitleCommand">
+      <UniqueIdentifier>{4216a9a4-d410-4f00-97c9-8371fee5661f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="command\insertParagraph">
+      <UniqueIdentifier>{f7d42743-79d4-4526-a33e-552a31939bd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="command\replaceText">
+      <UniqueIdentifier>{a45640d8-f1a8-4117-8efa-a4669a855b06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="command\insertImage">
+      <UniqueIdentifier>{940d28fa-78c8-42ae-bfc3-554f0e8e8dc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="command\resizeImage">
+      <UniqueIdentifier>{4e269a77-1c88-44b1-a2d9-a3cc6e2ec555}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="command\deleteItem">
+      <UniqueIdentifier>{5de89f1d-e41c-46b8-9a24-794a7835ed71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HtmlConverter">
+      <UniqueIdentifier>{388bb4ee-0120-4aa3-85da-05faa4105605}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imagesStorage">
+      <UniqueIdentifier>{cf5cb122-2bf6-47eb-a6cd-aeb26c79d6eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CDocumentItem.cpp">
+      <Filter>document</Filter>
+    </ClCompile>
+    <ClCompile Include="CConstDocumentItem.cpp">
+      <Filter>document</Filter>
+    </ClCompile>
+    <ClCompile Include="CDocument.cpp">
+      <Filter>document</Filter>
+    </ClCompile>
+    <ClCompile Include="CImage.cpp">
+      <Filter>image</Filter>
+    </ClCompile>
+    <ClCompile Include="CParagraph.cpp">
+      <Filter>paragraph</Filter>
+    </ClCompile>
+    <ClCompile Include="CMenu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="CHistory.cpp">
+      <Filter>history</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="CEditor.cpp">
+      <Filter>editor</Filter>
+    </ClCompile>
+    <ClCompile Include="CAbstractCommand.cpp">
+      <Filter>command\command</Filter>
+    </ClCompile>
+    <ClCompile Include="CChangeStringCommand.cpp">
+      <Filter>command\changeStringCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="CSetTitleCommand.cpp">
+      <Filter>command\setTitleCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="CInsertParagraph.cpp">
+      <Filter>command\insertParagraph</Filter>
+    </ClCompile>
+    <ClCompile Include="CReplaceText.cpp">
+      <Filter>command\replaceText</Filter>
+    </ClCompile>
+    <ClCompile Include="CInsertImage.cpp">
+      <Filter>command\insertImage</Filter>
+    </ClCompile>
+    <ClCompile Include="CResizeImage.cpp">
+      <Filter>command\resizeImage</Filter>
+    </ClCompile>
+    <ClCompile Include="DeleteItem.cpp">
+      <Filter>command\deleteItem</Filter>
+    </ClCompile>
+    <ClCompile Include="CHtmlConverter.cpp">
+      <Filter>HtmlConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="CImagesStorage.cpp">
+      <Filter>imagesStorage</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IDocument.h">
+      <Filter>document</Filter>
+    </ClInclude>
+    <ClInclude Include="CDocumentItem.h">
+      <Filter>document</Filter>
+    </ClInclude>
+    <ClInclude Include="CConstDocumentItem.h">
+      <Filter>document</Filter>
+    </ClInclude>
+    <ClInclude Include="CDocument.h">
+      <Filter>document</Filter>
+    </ClInclude>
+    <ClInclude Include="IImage.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="CImage.h">
+      <Filter>image</Filter>
+    </ClInclude>
+    <ClInclude Include="IParagraph.h">
+      <Filter>paragraph</Filter>
+    </ClInclude>
+    <ClInclude Include="CParagraph.h">
+      <Filter>paragraph</Filter>
+    </ClInclude>
+    <ClInclude Include="CMenu.h">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="CHistory.h">
+      <Filter>history</Filter>
+    </ClInclude>
+    <ClInclude Include="CEditor.h">
+      <Filter>editor</Filter>
+    </ClInclude>
+    <ClInclude Include="CAbstractCommand.h">
+      <Filter>command\command</Filter>
+    </ClInclude>
+    <ClInclude Include="ICommand.h">
+      <Filter>command\command</Filter>
+    </ClInclude>
+    <ClInclude Include="ICommand_fwd.h">
+      <Filter>command\command</Filter>
+    </ClInclude>
+    <ClInclude Include="CChangeStringCommand.h">
+      <Filter>command\changeStringCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="CSetTitleCommand.h">
+      <Filter>command\setTitleCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="CInsertParagraph.h">
+      <Filter>command\insertParagraph</Filter>
+    </ClInclude>
+    <ClInclude Include="CReplaceText.h">
+      <Filter>command\replaceText</Filter>
+    </ClInclude>
+    <ClInclude Include="CInsertImage.h">
+      <Filter>command\insertImage</Filter>
+    </ClInclude>
+    <ClInclude Include="CResizeImage.h">
+      <Filter>command\resizeImage</Filter>
+    </ClInclude>
+    <ClInclude Include="DeleteItem.h">
+      <Filter>command\deleteItem</Filter>
+    </ClInclude>
+    <ClInclude Include="CHtmlConverter.h">
+      <Filter>HtmlConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="IHistory.h">
+      <Filter>history</Filter>
+    </ClInclude>
+    <ClInclude Include="CImagesStorage.h">
+      <Filter>imagesStorage</Filter>
+    </ClInclude>
+    <ClInclude Include="IImageStorage.h">
+      <Filter>imagesStorage</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Command.rc">
+      <Filter>Файлы заголовков\Файлы ресурсов</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

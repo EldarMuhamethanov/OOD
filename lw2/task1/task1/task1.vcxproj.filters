@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Displays">
+      <UniqueIdentifier>{419cb3e7-bef4-4d77-8fe1-ced7810807ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WeatherData">
+      <UniqueIdentifier>{977fdcfc-e6f1-4d08-a0a7-d118a2c2d8f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StatsData">
+      <UniqueIdentifier>{f60f5c46-5403-4d0f-bd82-c641a3e94f47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Observing">
+      <UniqueIdentifier>{4edfe6c1-e77d-4016-90ea-b1930951c6ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="task1.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="CDisplay.cpp">
+      <Filter>Displays</Filter>
+    </ClCompile>
+    <ClCompile Include="CStatsDisplay.cpp">
+      <Filter>Displays</Filter>
+    </ClCompile>
+    <ClCompile Include="CWeatherData.cpp">
+      <Filter>WeatherData</Filter>
+    </ClCompile>
+    <ClCompile Include="CSimpleStatsData.cpp">
+      <Filter>StatsData</Filter>
+    </ClCompile>
+    <ClCompile Include="CStatsData.cpp">
+      <Filter>StatsData</Filter>
+    </ClCompile>
+    <ClCompile Include="CWindDirectionStatsData.cpp">
+      <Filter>StatsData</Filter>
+    </ClCompile>
+    <ClCompile Include="CWeatherDataPro.cpp">
+      <Filter>WeatherData</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CDisplay.h">
+      <Filter>Displays</Filter>
+    </ClInclude>
+    <ClInclude Include="CStatsDisplay.h">
+      <Filter>Displays</Filter>
+    </ClInclude>
+    <ClInclude Include="CWeatherData.h">
+      <Filter>WeatherData</Filter>
+    </ClInclude>
+    <ClInclude Include="CStatsData.h">
+      <Filter>StatsData</Filter>
+    </ClInclude>
+    <ClInclude Include="CWindDirectionStatsData.h">
+      <Filter>StatsData</Filter>
+    </ClInclude>
+    <ClInclude Include="CSimpleStatsData.h">
+      <Filter>StatsData</Filter>
+    </ClInclude>
+    <ClInclude Include="Observing.h">
+      <Filter>Observing</Filter>
+    </ClInclude>
+    <ClInclude Include="CWeatherDataPro.h">
+      <Filter>WeatherData</Filter>
+    </ClInclude>
+    <ClInclude Include="CWeatherDataInside.h">
+      <Filter>WeatherData</Filter>
+    </ClInclude>
+    <ClInclude Include="CWeatherDataOutside.h">
+      <Filter>WeatherData</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
