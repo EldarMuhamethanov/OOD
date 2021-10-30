@@ -11,7 +11,6 @@ public:
 
 	void DoExecute();
 	void DoUnexecute();
-	void OnDeleteFrom() override {};
 private:
 	IDocument& m_document;
 	size_t m_position;

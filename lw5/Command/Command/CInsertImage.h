@@ -7,10 +7,10 @@ class CInsertImage: public CAbstractCommand
 {
 public:
 	CInsertImage(IDocument& document, const std::string& path, int width, int height, const size_t position);
+	~CInsertImage();
 
 	void DoExecute();
 	void DoUnexecute();
-	void OnDeleteFrom() override;
 private:
 	IDocument& m_document;
 	std::string m_path;

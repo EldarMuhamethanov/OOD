@@ -53,8 +53,9 @@ void CEditor::SetTitle(istream& in)
 	}
 	string title = head + tail;
 
-	unique_ptr<ICommand> setTitleCommand = make_unique<CSetTitleCommand>(*m_document, title);
-	m_document->ApplyCommand(move(setTitleCommand));
+	//unique_ptr<ICommand> setTitleCommand = make_unique<CSetTitleCommand>(*m_document, title);
+	//m_document->ApplyCommand(move(setTitleCommand));
+	m_document->SetTitle(title);
 }
 
 void CEditor::InsertParagraph(istream& in)
@@ -74,8 +75,9 @@ void CEditor::InsertParagraph(istream& in)
 	{
 		throw exception("invalid position");
 	}
-	unique_ptr<ICommand> insertParagraphCommand = make_unique<CInsertParagraph>(*m_document, userText, position);
-	m_document->ApplyCommand(move(insertParagraphCommand));
+	//unique_ptr<ICommand> insertParagraphCommand = make_unique<CInsertParagraph>(*m_document, userText, position);
+	//m_document->ApplyCommand(move(insertParagraphCommand));
+	m_document->InsertParagraph(userText, position);
 }
 
 void CEditor::ReplaceText(istream& in)

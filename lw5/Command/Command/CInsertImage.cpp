@@ -11,6 +11,13 @@ CInsertImage::CInsertImage(IDocument& document, const std::string& path, int wid
 	, m_position(position)
 {}
 
+CInsertImage::~CInsertImage()
+{
+	fs::path path = m_newPath;
+	string fileName = path.filename().string();
+	m_document.GetImageStorage().RemoveFile(fileName);
+}
+
 void CInsertImage::DoExecute()
 {
 	std::shared_ptr<IImage> image = m_document.InsertImage(m_path, m_width, m_height, m_position);
@@ -20,11 +27,4 @@ void CInsertImage::DoExecute()
 void CInsertImage::DoUnexecute()
 {
 	m_document.DeleteItem(m_position);
-}
-
-void CInsertImage::OnDeleteFrom()
-{
-	fs::path path = m_newPath;
-	string fileName = path.filename().string();
-	m_document.GetImageStorage().RemoveFile(fileName);
 }

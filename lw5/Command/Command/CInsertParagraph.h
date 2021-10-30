@@ -1,18 +1,17 @@
 #pragma once
 #include "CAbstractCommand.h"
 #include "IDocument.h"
+#include <functional>
 
 class CInsertParagraph : public CAbstractCommand
 {
 public:
-	CInsertParagraph(IDocument& document, std::string const& text, int position);
+	CInsertParagraph(std::function<void()> onInsert, std::function<void()> onDelete);
 
 	void DoExecute();
 	void DoUnexecute();
-	void OnDeleteFrom() override {};
 private:
-	IDocument& m_document;
-	std::string m_text;
-	int m_position;
+	std::function<void()> m_execute;
+	std::function<void()> m_unexecute;
 };
 

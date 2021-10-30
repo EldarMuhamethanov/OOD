@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="graphics_lib">
+      <UniqueIdentifier>{02c877aa-64e1-49bb-9592-fc5542c42a8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shape_drawing_lib">
+      <UniqueIdentifier>{c6593347-7a0b-427c-941b-b36c3e964108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="modern_graphics_lib">
+      <UniqueIdentifier>{f51eef49-a317-4c1b-b26b-f9799aaed6f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="app">
+      <UniqueIdentifier>{6a9e1746-a25c-4b8a-92ca-0e1bddd547a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="adapter">
+      <UniqueIdentifier>{bc93f57a-0d13-49d5-a078-937784077a7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="graphic_lib_pro">
+      <UniqueIdentifier>{a3db3b60-98f8-4013-9afa-00b88155d47b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Adapter%27.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>app</Filter>
+    </ClCompile>
+    <ClCompile Include="ModernGraphicsLibAdapter.cpp">
+      <Filter>adapter</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GraphicsLib.h">
+      <Filter>graphics_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeDrawindLib.h">
+      <Filter>shape_drawing_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="ModernGraphicsLib.h">
+      <Filter>modern_graphics_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
+      <Filter>app</Filter>
+    </ClInclude>
+    <ClInclude Include="ModernGraphicsLibAdapter.h">
+      <Filter>adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsLibPro.h">
+      <Filter>graphic_lib_pro</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

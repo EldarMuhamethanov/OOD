@@ -1,5 +1,7 @@
 #include "CDocument.h"
 #include "CChangeStringCommand.h"
+#include "CInsertParagraph.h"
+#include "CSetTitleCommand.h"
 #include "CParagraph.h"
 #include "CImage.h"
 #include "CHtmlConverter.h"
@@ -18,6 +20,16 @@ CDocument::CDocument()
 
 void CDocument::SetTitle(const std::string& title)
 {
+	string oldTitle = GetTitle();
+	unique_ptr<ICommand> command = make_unique<CSetTitleCommand>(
+		[&, title]() {
+			m_title = title;
+		},
+		[&, oldTitle]() {
+			m_title = oldTitle;
+		}
+		);
+	ApplyCommand(move(command));
 	m_title = title;
 }
 std::string CDocument::GetTitle() const
@@ -27,8 +39,16 @@ std::string CDocument::GetTitle() const
 shared_ptr<IParagraph> CDocument::InsertParagraph(const string& text, const size_t position)
 {
 	shared_ptr<IParagraph> paragraph = make_shared<CParagraph>(text);
-	CDocumentItem item(nullptr, paragraph);
-	AddItem(item, position);
+	unique_ptr<ICommand> command = make_unique<CInsertParagraph>(
+		[&, position]() {
+			CDocumentItem item(nullptr, paragraph);
+			AddItem(item, position);
+		},
+		[&, position]() {
+			DeleteItem(position);
+		}
+	);
+	ApplyCommand(move(command));
 	return paragraph;
 }
 void CDocument::ReplaceText(size_t position, const string& newText)
@@ -118,6 +138,7 @@ void CDocument::Save(const std::string& path)const
 	fs::path fsPath = path;
 	auto resultPath = fsPath.parent_path() / IMAGE_STORAGE_FOLDER;
 	filesystem::copy(IMAGE_STORAGE_FOLDER, resultPath.u8string(), filesystem::copy_options::recursive | filesystem::copy_options::overwrite_existing);
+	// принимать интерфейс print
 	CHtmlConverter::PrintDocument(*this, out);
 }
 

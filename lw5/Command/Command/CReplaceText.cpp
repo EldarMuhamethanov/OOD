@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// Принимать параграф
 CReplaceText::CReplaceText(IDocument& document, size_t position, std::string const& newText)
 	: m_document(document)
 	, m_position(position)

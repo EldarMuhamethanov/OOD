@@ -10,7 +10,6 @@ public:
 
 	void DoExecute();
 	void DoUnexecute();
-	void OnDeleteFrom() override {};
 private:
 	IDocument& m_document;
 	int m_position;

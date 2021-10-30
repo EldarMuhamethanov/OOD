@@ -38,10 +38,6 @@ void CHistory::AddAndExecuteCommand(ICommandPtr&& command)
 	if (m_nextCommandIndex < m_commands.size())
 	{
 		command->Execute();
-		for (size_t i = m_nextCommandIndex; i < m_commands.size(); i++)
-		{
-			m_commands[i]->OnDeleteFrom();
-		}
 		++m_nextCommandIndex;
 		m_commands.resize(m_nextCommandIndex);
 		m_commands.back() = move(command);
@@ -58,7 +54,6 @@ void CHistory::AddAndExecuteCommand(ICommandPtr&& command)
 			++m_nextCommandIndex;
 			if (m_nextCommandIndex > MAX_HISTORY_SIZE)
 			{
-				m_commands[0]->OnDeleteFrom();
 				m_commands.erase(m_commands.begin());
 				m_nextCommandIndex = MAX_HISTORY_SIZE;
 			}

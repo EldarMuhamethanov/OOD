@@ -2,6 +2,7 @@
 #include "CAbstractCommand.h"
 #include "IDocument.h"
 #include <string>
+#include <functional>
 
 class CSetTitleCommand: public CAbstractCommand
 {
@@ -10,7 +11,6 @@ public:
 
 	void DoExecute();
 	void DoUnexecute();
-	void OnDeleteFrom() override {};
 private:
 	IDocument& m_document;
 	std::string m_oldTitle;

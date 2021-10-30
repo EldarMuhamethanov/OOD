@@ -10,7 +10,6 @@ public:
 protected:
 	void DoExecute() override;
 	void DoUnexecute() override;
-	void OnDeleteFrom() override {};
 
 private:
 	std::string m_newValue;

@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Принимать image
 CResizeImage::CResizeImage(IDocument& document, int position, int newWidth, int newHeight)
 	: m_document(document)
 	, m_position(position)

@@ -1,17 +1,16 @@
 #include "CInsertParagraph.h"
 
-CInsertParagraph::CInsertParagraph(IDocument& document, std::string const& text, int position)
-	: m_document(document)
-	, m_text(text)
-	, m_position(position)
+CInsertParagraph::CInsertParagraph(std::function<void()> onInsert, std::function<void()> onDelete)
+	: m_execute(onInsert)
+	, m_unexecute(onDelete)
 {}
 
 void CInsertParagraph::DoExecute()
 {
-	m_document.InsertParagraph(m_text, m_position);
+	m_execute();
 }
 
 void CInsertParagraph::DoUnexecute()
 {
-	m_document.DeleteItem(m_position);
+	m_unexecute();
 }

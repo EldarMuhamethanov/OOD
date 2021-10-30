@@ -4,7 +4,6 @@ using namespace std;
 
 CMemoryInputStream::CMemoryInputStream(vector<uint8_t>& vector)
 	: m_vector(vector)
-	, m_top(-1)
 {}
 
 bool CMemoryInputStream::IsEOF()
