@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1d7fd06d-e92c-4785-9608-b568dae6e6c0}</ProjectGuid>
-    <RootNamespace>Adapter</RootNamespace>
+    <ProjectGuid>{919a6c96-4c41-4002-8e54-711a170f3358}</ProjectGuid>
+    <RootNamespace>Compositetest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -102,6 +103,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,15 +141,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Adapter%27.cpp" />
-    <ClCompile Include="App.cpp" />
+    <ClCompile Include="..\Composite\CEllipse.cpp" />
+    <ClCompile Include="..\Composite\CGroupFillStyle.cpp" />
+    <ClCompile Include="..\Composite\CGroupOutlineColor.cpp" />
+    <ClCompile Include="..\Composite\CGroupShape.cpp" />
+    <ClCompile Include="..\Composite\CRectangle.cpp" />
+    <ClCompile Include="..\Composite\CShape.cpp" />
+    <ClCompile Include="..\Composite\CSimlpeFillStyle.cpp" />
+    <ClCompile Include="..\Composite\CSimpleOutlineStyle.cpp" />
+    <ClCompile Include="..\Composite\CSlide.cpp" />
+    <ClCompile Include="..\Composite\CSvgCanvas.cpp" />
+    <ClCompile Include="..\Composite\CTriangle.cpp" />
+    <ClCompile Include="..\Composite\IDrawable.cpp" />
+    <ClCompile Include="Composite-test.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="App.h" />
-    <ClInclude Include="GraphicsLib.h" />
-    <ClInclude Include="ModernGraphicsLib.h" />
-    <ClInclude Include="ModernGraphicsLibAdapter.h" />
-    <ClInclude Include="ShapeDrawindLib.h" />
+    <ClInclude Include="..\Composite\CEllipse.h" />
+    <ClInclude Include="..\Composite\CGroupFillStyle.h" />
+    <ClInclude Include="..\Composite\CGroupOutlineColor.h" />
+    <ClInclude Include="..\Composite\CGroupShape.h" />
+    <ClInclude Include="..\Composite\CommonTypes.h" />
+    <ClInclude Include="..\Composite\CRectangle.h" />
+    <ClInclude Include="..\Composite\CShape.h" />
+    <ClInclude Include="..\Composite\CSimpleFillStyle.h" />
+    <ClInclude Include="..\Composite\CSimpleOutlineStyle.h" />
+    <ClInclude Include="..\Composite\CSlide.h" />
+    <ClInclude Include="..\Composite\CSvgCanvas.h" />
+    <ClInclude Include="..\Composite\CTriangle.h" />
+    <ClInclude Include="..\Composite\ICanvas.h" />
+    <ClInclude Include="..\Composite\IDrawable.h" />
+    <ClInclude Include="..\Composite\IGroupShape.h" />
+    <ClInclude Include="..\Composite\IOutlineStyle.h" />
+    <ClInclude Include="..\Composite\IShape.h" />
+    <ClInclude Include="..\Composite\IShapes.h" />
+    <ClInclude Include="..\Composite\ISlide.h" />
+    <ClInclude Include="..\Composite\IStyle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

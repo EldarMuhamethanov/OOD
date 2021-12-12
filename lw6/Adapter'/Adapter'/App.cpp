@@ -25,8 +25,4 @@ void app::PaintPictureOnModernGraphicsRenderer()
 	ModernGraphicsLibAdapter libAdapter(renderer);
 	shape_drawing_lib::CCanvasPainter painter(libAdapter);
 	PaintPicture(painter);
-
-	// TODO: при помощи существующей функции PaintPicture() нарисовать
-	// картину на renderer
-	// Подсказка: используйте паттерн "Адаптер"
 }

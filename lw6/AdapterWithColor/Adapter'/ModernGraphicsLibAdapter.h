@@ -4,11 +4,12 @@
 
 class ModernGraphicsLibAdapter: public graphics_lib::ICanvas
 {
+	static constexpr float DEFAULT_ALPHA_CHANEL = 1;
 public:
 	ModernGraphicsLibAdapter(modern_graphics_lib::CModernGraphicsRenderer& renderer)
 		: m_renderer(renderer)
 		, m_currPosition(0, 0)
-		, m_color(0, 0, 0, 1)
+		, m_color(0, 0, 0, DEFAULT_ALPHA_CHANEL)
 	{
 		m_renderer.BeginDraw();
 	}
@@ -18,7 +19,7 @@ public:
 		double r = ((rgbColor >> 16) & 0xFF) / 255.0;
 		double g = ((rgbColor >> 8) & 0xFF) / 255.0;
 		double b = ((rgbColor) & 0xFF) / 255.0;
-		m_color = modern_graphics_lib::CRGBAColor((float)r, (float)g, (float)b, 1);
+		m_color = modern_graphics_lib::CRGBAColor((float)r, (float)g, (float)b, DEFAULT_ALPHA_CHANEL);
 	}
 
 	void MoveTo(int x, int y) override

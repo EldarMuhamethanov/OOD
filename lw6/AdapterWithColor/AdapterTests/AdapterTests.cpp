@@ -14,8 +14,8 @@ void DrawLine(ostream& out, modern_graphics_lib::CPoint from, modern_graphics_li
 	modern_graphics_lib::CModernGraphicsRenderer renderer(out);
 	ModernGraphicsLibAdapter libAdapter(renderer);
 	libAdapter.SetColor(color);
-	libAdapter.MoveTo(1, 1);
-	libAdapter.LineTo(5, 5);
+	libAdapter.MoveTo(from.x, from.y);
+	libAdapter.LineTo(to.x, to.y);
 }
 
 SCENARIO("adapter tests")

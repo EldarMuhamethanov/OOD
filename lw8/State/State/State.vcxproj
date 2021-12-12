@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1d7fd06d-e92c-4785-9608-b568dae6e6c0}</ProjectGuid>
-    <RootNamespace>Adapter</RootNamespace>
+    <ProjectGuid>{1f88efac-e978-42b0-92e1-2908a57fb9d2}</ProjectGuid>
+    <RootNamespace>State</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,15 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Adapter%27.cpp" />
-    <ClCompile Include="App.cpp" />
+    <ClCompile Include="CGumballMachineController.cpp" />
+    <ClCompile Include="CMenu.cpp" />
+    <ClCompile Include="State.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="App.h" />
-    <ClInclude Include="GraphicsLib.h" />
-    <ClInclude Include="ModernGraphicsLib.h" />
-    <ClInclude Include="ModernGraphicsLibAdapter.h" />
-    <ClInclude Include="ShapeDrawindLib.h" />
+    <ClInclude Include="CGumballMachineController.h" />
+    <ClInclude Include="CMenu.h" />
+    <ClInclude Include="GumballMachineWithState.h" />
+    <ClInclude Include="NaiveGumballMachine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

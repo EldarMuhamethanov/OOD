@@ -6,8 +6,8 @@ class ModernGraphicsLibAdapter: public graphics_lib::ICanvas, private modern_gra
 {
 public:
 	ModernGraphicsLibAdapter(std::ostream& out)
-		: m_currPosition(0, 0)
-		, CModernGraphicsRenderer(out)
+		: CModernGraphicsRenderer(out)
+		, m_currPosition(0, 0)
 	{
 		BeginDraw();
 	}

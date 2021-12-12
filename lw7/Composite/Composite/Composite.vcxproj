@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1d7fd06d-e92c-4785-9608-b568dae6e6c0}</ProjectGuid>
-    <RootNamespace>Adapter</RootNamespace>
+    <ProjectGuid>{9c567200-c587-41d7-b775-f71ab13d7dbf}</ProjectGuid>
+    <RootNamespace>Composite</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,15 +140,44 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Adapter%27.cpp" />
-    <ClCompile Include="App.cpp" />
+    <ClCompile Include="CEllipse.cpp" />
+    <ClCompile Include="CGroupFillStyle.cpp" />
+    <ClCompile Include="CGroupOutlineColor.cpp" />
+    <ClCompile Include="CGroupShape.cpp" />
+    <ClCompile Include="Composite.cpp" />
+    <ClCompile Include="CRectangle.cpp" />
+    <ClCompile Include="CShape.cpp" />
+    <ClCompile Include="CSimlpeFillStyle.cpp" />
+    <ClCompile Include="CSimpleOutlineStyle.cpp" />
+    <ClCompile Include="CSlide.cpp" />
+    <ClCompile Include="CSvgCanvas.cpp" />
+    <ClCompile Include="CTriangle.cpp" />
+    <ClCompile Include="IDrawable.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="App.h" />
-    <ClInclude Include="GraphicsLib.h" />
-    <ClInclude Include="ModernGraphicsLib.h" />
-    <ClInclude Include="ModernGraphicsLibAdapter.h" />
-    <ClInclude Include="ShapeDrawindLib.h" />
+    <ClInclude Include="CEllipse.h" />
+    <ClInclude Include="CGroupFillStyle.h" />
+    <ClInclude Include="CGroupOutlineColor.h" />
+    <ClInclude Include="CGroupShape.h" />
+    <ClInclude Include="CommonTypes.h" />
+    <ClInclude Include="CRectangle.h" />
+    <ClInclude Include="CShape.h" />
+    <ClInclude Include="CSimpleFillStyle.h" />
+    <ClInclude Include="CSimpleOutlineStyle.h" />
+    <ClInclude Include="CSlide.h" />
+    <ClInclude Include="CSvgCanvas.h" />
+    <ClInclude Include="CTriangle.h" />
+    <ClInclude Include="ICanvas.h" />
+    <ClInclude Include="IDrawable.h" />
+    <ClInclude Include="IGroupShape.h" />
+    <ClInclude Include="IOutlineStyle.h" />
+    <ClInclude Include="IShape.h" />
+    <ClInclude Include="IShapes.h" />
+    <ClInclude Include="ISlide.h" />
+    <ClInclude Include="IStyle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="result.svg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

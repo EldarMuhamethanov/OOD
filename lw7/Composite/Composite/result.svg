@@ -1,0 +1,21 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1000' height='800' viewPort='0 0 1000 800'>
+<polygon points = '0.000000,0.000000 1000.000000,0.000000 1000.000000,800.000000 0.000000,800.000000' fill = 'rgb(0.000000, 0.000000, 0.000000)'/><line x1 = '0' y1 = '220' x2 = '400' y2 = '220' stroke = 'transparent' stroke-width = '0'/>
+<line x1 = '400' y1 = '220' x2 = '400' y2 = '300' stroke = 'transparent' stroke-width = '0'/>
+<line x1 = '400' y1 = '300' x2 = '0' y2 = '300' stroke = 'transparent' stroke-width = '0'/>
+<line x1 = '0' y1 = '220' x2 = '0' y2 = '300' stroke = 'transparent' stroke-width = '0'/>
+<polygon points = '0.000000,220.000000 400.000000,220.000000 400.000000,300.000000 0.000000,300.000000' fill = 'rgb(70.000000, 245.000000, 244.000000)'/><line x1 = '40' y1 = '140' x2 = '200' y2 = '140' stroke = 'transparent' stroke-width = '0'/>
+<line x1 = '200' y1 = '140' x2 = '200' y2 = '260' stroke = 'transparent' stroke-width = '0'/>
+<line x1 = '200' y1 = '260' x2 = '40' y2 = '260' stroke = 'transparent' stroke-width = '0'/>
+<line x1 = '40' y1 = '140' x2 = '40' y2 = '260' stroke = 'transparent' stroke-width = '0'/>
+<polygon points = '40.000000,140.000000 200.000000,140.000000 200.000000,260.000000 40.000000,260.000000' fill = 'rgb(70.000000, 245.000000, 244.000000)'/><line x1 = '80' y1 = '168' x2 = '160' y2 = '168' stroke = 'transparent' stroke-width = '0'/>
+<line x1 = '160' y1 = '168' x2 = '160' y2 = '232' stroke = 'transparent' stroke-width = '0'/>
+<line x1 = '160' y1 = '232' x2 = '80' y2 = '232' stroke = 'transparent' stroke-width = '0'/>
+<line x1 = '80' y1 = '168' x2 = '80' y2 = '232' stroke = 'transparent' stroke-width = '0'/>
+<polygon points = '80.000000,168.000000 160.000000,168.000000 160.000000,232.000000 80.000000,232.000000' fill = 'rgb(70.000000, 245.000000, 244.000000)'/><line x1 = '36' y1 = '140' x2 = '204' y2 = '140' stroke = 'transparent' stroke-width = '0'/>
+<line x1 = '204' y1 = '140' x2 = '120' y2 = '60' stroke = 'transparent' stroke-width = '0'/>
+<line x1 = '120' y1 = '60' x2 = '36' y2 = '140' stroke = 'transparent' stroke-width = '0'/>
+<polygon points = '36.000000,140.000000 204.000000,140.000000 120.000000,60.000000' fill = 'rgb(70.000000, 245.000000, 244.000000)'/><ellipse rx = '48' ry = '26' cx = '280' cy = '260' stroke = 'transparent' stroke-width = '0' fill = 'transparent'/>
+<ellipse rx = '48' ry = '26' cx = '280' cy = '260' fill = 'rgb(70.000000, 245.000000, 244.000000)'/>
+<ellipse rx = '40' ry = '40' cx = '320' cy = '40' stroke = 'transparent' stroke-width = '0' fill = 'transparent'/>
+<ellipse rx = '40' ry = '40' cx = '320' cy = '40' fill = 'rgb(70.000000, 245.000000, 244.000000)'/>
+</svg>

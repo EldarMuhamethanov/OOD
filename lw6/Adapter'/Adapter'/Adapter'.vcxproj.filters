@@ -36,9 +36,6 @@
     <ClCompile Include="App.cpp">
       <Filter>app</Filter>
     </ClCompile>
-    <ClCompile Include="ModernGraphicsLibAdapter.cpp">
-      <Filter>adapter</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GraphicsLib.h">
