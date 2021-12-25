@@ -1,28 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ShapeFactory = void 0;
-var Shape_1 = require("../shapes/Shape");
-var Rectangle_1 = require("../shapes/Rectangle");
-var Ellipse_1 = require("../shapes/Ellipse");
-var Triangle_1 = require("../shapes/Triangle");
+var Shape_1 = require("../model/Shape");
+var Rectangle_1 = require("../view/Rectangle");
+var Ellipse_1 = require("../view/Ellipse");
+var Triangle_1 = require("../view/Triangle");
 var DEFAULT_WIDTH = 100;
 var DEFAULT_HEIGHT = 70;
 var ShapeFactory = /** @class */ (function () {
     function ShapeFactory() {
     }
-    ShapeFactory.createShapeModel = function (shapeType, canvas) {
-        var canvasWidth = canvas.getWidth();
-        var canvasHeight = canvas.getHeight();
-        return new Shape_1.Shape(DEFAULT_WIDTH, DEFAULT_HEIGHT, canvasHeight / 2 - DEFAULT_HEIGHT / 2, canvasWidth / 2 - DEFAULT_WIDTH / 2, shapeType);
+    ShapeFactory.createShapeModel = function (_a) {
+        var shapeType = _a.shapeType, canvas = _a.canvas, _b = _a.width, width = _b === void 0 ? DEFAULT_WIDTH : _b, _c = _a.height, height = _c === void 0 ? DEFAULT_HEIGHT : _c, _d = _a.left, left = _d === void 0 ? canvas.getWidth() / 2 - DEFAULT_HEIGHT / 2 : _d, _e = _a.top, top = _e === void 0 ? canvas.getHeight() / 2 - DEFAULT_HEIGHT / 2 : _e;
+        return new Shape_1.Shape(canvas, width, height, top, left, shapeType);
     };
-    ShapeFactory.createShapeRenderer = function (model, canvas) {
+    ShapeFactory.createShapeRenderer = function (model) {
         switch (model.shapeType) {
             case "rectangle":
-                return new Rectangle_1.RectangleRenderer(model, canvas);
+                return new Rectangle_1.RectangleRenderer(model);
             case "ellipse":
-                return new Ellipse_1.EllipseRenderer(model, canvas);
+                return new Ellipse_1.EllipseRenderer(model);
             case "triangle":
-                return new Triangle_1.TriangleRenderer(model, canvas);
+                return new Triangle_1.TriangleRenderer(model);
         }
     };
     return ShapeFactory;

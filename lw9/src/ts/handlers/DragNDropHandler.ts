@@ -1,24 +1,18 @@
-import { Position } from "../shapes/Position";
-import {ISignal, Signal} from "../Signal";
+import { Position } from "../common/Position";
+import {ISignal, Signal} from "../common/Signal";
 
 class DragNDropHandler {
     private m_element: HTMLElement
     private onMoveSignal: ISignal<Position> = new Signal<Position>()
-    private onDragStart: ISignal<void> = new Signal()
+
+    private onShapeMouseDownCallback: (e: MouseEvent) => void = () => {}
+    private onShapeMouseMoveCallback: (e: MouseEvent) => void = () => {}
+    private onShapeMouseUpCallback: () => void = () => {}
+
     constructor(element: HTMLElement) {
         this.m_element = element
-
-        this.m_element.onmousedown = e => {
-            if (!e.defaultPrevented) {
-                e.preventDefault()
-                this.onDragStart.dispatch()
-                this.onShapeMouseDown(e)
-            }
-        }
-    }
-
-    getOnDragStart() {
-        return this.onDragStart
+        this.onShapeMouseDownCallback = (e: MouseEvent) => this.onShapeMouseDown(e)
+        this.m_element.addEventListener('mousedown', this.onShapeMouseDownCallback)
     }
 
     getOnMoveSignal() {
@@ -26,8 +20,8 @@ class DragNDropHandler {
     }
 
     private onShapeMouseUp() {
-        window.onmousemove = null
-        window.onmouseup = null
+        window.removeEventListener('mousemove', this.onShapeMouseMoveCallback)
+        window.removeEventListener('mouseup', this.onShapeMouseUpCallback)
     }
 
     private onShapeMove(e: MouseEvent, leftOffset: number, topOffset: number) {
@@ -38,12 +32,17 @@ class DragNDropHandler {
     }
 
     private onShapeMouseDown(e: MouseEvent) {
-        const elementBounds = this.m_element.getBoundingClientRect()
-        const resultLeftOffset = (e.x - elementBounds.left)
-        const resultTopOffset = (e.y - elementBounds.top)
+        if (!e.defaultPrevented) {
+            e.preventDefault()
+            const elementBounds = this.m_element.getBoundingClientRect()
+            const resultLeftOffset = (e.x - elementBounds.left)
+            const resultTopOffset = (e.y - elementBounds.top)
 
-        window.onmousemove = e => this.onShapeMove(e, resultLeftOffset, resultTopOffset)
-        window.onmouseup = () => this.onShapeMouseUp()
+            this.onShapeMouseMoveCallback = (e: MouseEvent) => this.onShapeMove(e, resultLeftOffset, resultTopOffset)
+            this.onShapeMouseUpCallback = () => this.onShapeMouseUp()
+            window.addEventListener('mousemove', this.onShapeMouseMoveCallback)
+            window.addEventListener('mouseup', this.onShapeMouseUpCallback)
+        }
     }
 }
 

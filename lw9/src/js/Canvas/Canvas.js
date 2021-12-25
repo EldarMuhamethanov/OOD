@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Canvas = void 0;
-var Signal_1 = require("../Signal");
+var Signal_1 = require("../common/Signal");
 var CANVAS_WIDTH = 640;
 var CANVAS_HEIGHT = 480;
 var Canvas = /** @class */ (function () {

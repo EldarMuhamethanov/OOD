@@ -1,10 +1,10 @@
-import {EditorModel} from "./editor/EditorModel";
-import {EditorRenderer} from "./editor/EditorRenderer";
+import {EditorRenderer} from "./view/EditorRenderer";
+import {EditorModel} from "./model/EditorModel";
 
 function startApp() {
-    const editor: EditorModel = new EditorModel()
-    const editorRenderer: EditorRenderer = new EditorRenderer(editor)
-    editorRenderer.render()
+    const editorModel = new EditorModel()
+    const editorRenderer = new EditorRenderer(editorModel)
+    editorRenderer.render(document.body)
 }
 
 window.onload = () => {

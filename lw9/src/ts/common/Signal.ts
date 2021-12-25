@@ -5,6 +5,8 @@ abstract class ISignal<T> {
     abstract addCallOnce(fn: (value: T) => void): void
 
     abstract dispatch(value: T): void
+
+    abstract clearListeners(): void
 }
 
 class Signal<T> {

@@ -28,13 +28,6 @@ var EditorModel = /** @class */ (function () {
     EditorModel.prototype.setSelectedShape = function (shapeId) {
         if (shapeId !== this.m_selectedShape) {
             this.m_selectedShape = shapeId;
-            if (shapeId) {
-                var shape = this.m_shapes.find(function (shape) { return shape.id === shapeId; });
-                if (shape) {
-                    this.m_shapes = this.m_shapes.filter(function (shape) { return shape.id !== shapeId; });
-                    this.m_shapes.push(shape);
-                }
-            }
             this.m_onSelectedShapeChanged.dispatch();
         }
     };
@@ -48,6 +41,7 @@ var EditorModel = /** @class */ (function () {
             this.m_shapes = this.m_shapes.filter(function (shape) { return _this.m_selectedShape !== shape.id; });
             var currentSelectedShape = this.m_selectedShape;
             this.m_selectedShape = null;
+            this.m_onSelectedShapeChanged.dispatch();
             this.m_onShapeRemoved.dispatch(currentSelectedShape);
         }
     };
