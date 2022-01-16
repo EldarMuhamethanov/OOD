@@ -1,7 +1,6 @@
 import {ISignal, Signal} from "../common/Signal";
 import {ShapeType} from "../common/ShapeType";
 import {generateUid} from "../common/generateUid";
-import {CanvasModel} from "./CanvasModel";
 
 class Shape
 {
@@ -11,11 +10,9 @@ class Shape
     private m_top: number
     private readonly m_shapeType: ShapeType
     private readonly m_id: string
-    private readonly m_canvas: CanvasModel
     private onRectChange: ISignal<void> = new Signal<void>()
 
-    constructor (canvas: CanvasModel, width: number, height: number, top: number, left: number, shapeType: ShapeType) {
-        this.m_canvas = canvas
+    constructor (width: number, height: number, top: number, left: number, shapeType: ShapeType) {
         this.m_width = width
         this.m_height = height
         this.m_left = left
@@ -42,9 +39,6 @@ class Shape
     get height() {
         return this.m_height
     }
-    get canvas() {
-        return this.m_canvas
-    }
     setRect(left: number, top: number, width: number, height: number) {
         this.m_top = top
         this.m_left = left
@@ -57,17 +51,6 @@ class Shape
     }
     get top() {
         return this.m_top
-    }
-
-    toJson() {
-        return {
-            id: this.id,
-            left: this.left,
-            top: this.top,
-            type: this.shapeType,
-            width: this.width,
-            height: this.height,
-        }
     }
 }
 

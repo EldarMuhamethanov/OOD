@@ -28,7 +28,6 @@ class ShapeFactory {
         top = canvas.getHeight() / 2 - DEFAULT_HEIGHT / 2,
     }: ShapeModelType) {
         return new Shape(
-            canvas,
             width,
             height,
             top,
@@ -37,14 +36,14 @@ class ShapeFactory {
         )
     }
 
-    static createShapeRenderer(model: Shape) {
+    static createShapeRenderer(model: Shape, canvas: CanvasModel) {
         switch (model.shapeType) {
             case "rectangle":
-                return new RectangleRenderer(model)
+                return new RectangleRenderer(model, canvas)
             case "ellipse":
-                return new EllipseRenderer(model)
+                return new EllipseRenderer(model, canvas)
             case "triangle":
-                return new TriangleRenderer(model)
+                return new TriangleRenderer(model, canvas)
         }
     }
 }

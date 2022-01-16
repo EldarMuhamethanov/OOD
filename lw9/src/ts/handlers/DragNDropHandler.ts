@@ -2,14 +2,14 @@ import { Position } from "../common/Position";
 import {ISignal, Signal} from "../common/Signal";
 
 class DragNDropHandler {
-    private m_element: HTMLElement
+    private m_element: SVGGraphicsElement
     private onMoveSignal: ISignal<Position> = new Signal<Position>()
 
     private onShapeMouseDownCallback: (e: MouseEvent) => void = () => {}
     private onShapeMouseMoveCallback: (e: MouseEvent) => void = () => {}
     private onShapeMouseUpCallback: () => void = () => {}
 
-    constructor(element: HTMLElement) {
+    constructor(element: SVGGraphicsElement) {
         this.m_element = element
         this.onShapeMouseDownCallback = (e: MouseEvent) => this.onShapeMouseDown(e)
         this.m_element.addEventListener('mousedown', this.onShapeMouseDownCallback)

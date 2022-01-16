@@ -4,6 +4,7 @@ function download(content: string, fileName: string) {
     a.href = URL.createObjectURL(file)
     a.download = fileName
     a.click()
+    a.remove()
 }
 
 export {

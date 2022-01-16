@@ -2,14 +2,15 @@ import { Position } from "../common/Position";
 import {Shape} from "../model/Shape";
 import {ShapeRenderer} from "../view/ShapeRenderer";
 import {Rect} from "../common/Rect";
+import {CanvasModel} from "../model/CanvasModel";
 
 class ShapeController
 {
     private m_model: Shape;
-    private m_view: ShapeRenderer;
-    constructor(model: Shape, view: ShapeRenderer) {
+    private m_canvasModel: CanvasModel
+    constructor(model: Shape, canvasModel: CanvasModel) {
         this.m_model = model
-        this.m_view = view
+        this.m_canvasModel = canvasModel
     }
 
     shapeMove(position: Position) {
@@ -19,8 +20,8 @@ class ShapeController
         const height = this.m_model.height
 
         this.m_model.setRect(
-            Math.min(Math.max(left, 0), this.m_model.canvas.getWidth() - width),
-            Math.min(Math.max(top, 0), this.m_model.canvas.getHeight() - height),
+            Math.min(Math.max(left, 0), this.m_canvasModel.getWidth() - width),
+            Math.min(Math.max(top, 0), this.m_canvasModel.getHeight() - height),
             width,
             height
         )

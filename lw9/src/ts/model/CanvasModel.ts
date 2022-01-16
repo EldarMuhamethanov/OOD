@@ -7,8 +7,6 @@ class CanvasModel {
     private m_width: number
     private m_height: number
 
-    private readonly m_selectionModel: SelectionModel
-
     private m_onShapeCreated = new Signal<Shape>()
     private m_onShapeRemoved = new Signal<string>()
 
@@ -16,7 +14,6 @@ class CanvasModel {
         this.m_width = width
         this.m_height = height
         this.m_shapes = shapes
-        this.m_selectionModel = new SelectionModel(this)
     }
 
     getOnShapeCreated() {
@@ -25,10 +22,6 @@ class CanvasModel {
 
     getOnShapeRemoved() {
         return this.m_onShapeRemoved
-    }
-
-    getSelectionModel() {
-        return this.m_selectionModel
     }
 
     getWidth() {
@@ -51,18 +44,6 @@ class CanvasModel {
     removeShape(shapeId: string) {
         this.m_shapes = this.m_shapes.filter(shape => shapeId !== shape.id)
         this.m_onShapeRemoved.dispatch(shapeId)
-    }
-
-    toJson() {
-        const canvasWidth = this.getWidth()
-        const canvasHeight = this.getHeight()
-        const shapesJSON = this.getShapes().map(shape => shape.toJson())
-
-        return {
-            canvasWidth,
-            canvasHeight,
-            shapes: shapesJSON,
-        }
     }
 }
 

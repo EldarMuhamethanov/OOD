@@ -4,6 +4,7 @@ import {Renderer} from "./Renderer";
 import {TagName} from "../common/TagName";
 import {EditorModel} from "../model/EditorModel";
 import {EditorController} from "../controller/EditorController";
+import {SelectionModel} from "../model/SelectionModel";
 
 
 class EditorRenderer {
@@ -19,9 +20,11 @@ class EditorRenderer {
         this.m_workspaceRenderer.addClassName('workspace')
 
         this.m_model = model
-        this.m_controller = new EditorController(model, this)
+        const selectionModel = new SelectionModel()
 
-        this.m_canvasRenderer = new CanvasRenderer(model.canvasModel)
+        this.m_controller = new EditorController(model, selectionModel)
+
+        this.m_canvasRenderer = new CanvasRenderer(model.canvasModel, selectionModel)
 
         this.m_toolbarRenderer = new ToolbarRenderer()
         this.m_toolbarRenderer.getOnSaveSignal().add(() => this.m_controller.saveEditor())
@@ -34,7 +37,8 @@ class EditorRenderer {
 
     updateCanvasRenderer() {
         this.m_canvasRenderer.clear()
-        this.m_canvasRenderer = new CanvasRenderer(this.m_model.canvasModel)
+        const selectionModel = new SelectionModel()
+        this.m_canvasRenderer = new CanvasRenderer(this.m_model.canvasModel, selectionModel)
         this.m_canvasRenderer.render(this.m_workspaceRenderer.getDomElement())
     }
 

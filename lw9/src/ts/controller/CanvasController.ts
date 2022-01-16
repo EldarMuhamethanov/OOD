@@ -1,15 +1,16 @@
 import { Shape } from "../model/Shape";
 import {CanvasModel} from "../model/CanvasModel";
 import {CanvasRenderer} from "../view/CanvasRenderer";
+import {SelectionModel} from "../model/SelectionModel";
 
 
 class CanvasController {
     private m_model: CanvasModel
-    private m_renderer: CanvasRenderer
+    private m_selectionModel: SelectionModel
 
-    constructor(model: CanvasModel, renderer: CanvasRenderer) {
+    constructor(model: CanvasModel, selection: SelectionModel) {
         this.m_model = model
-        this.m_renderer = renderer
+        this.m_selectionModel = selection
     }
 
     addShape(shape: Shape) {
@@ -22,11 +23,11 @@ class CanvasController {
     }
 
     selectShape(shape: Shape) {
-        this.m_model.getSelectionModel().setSelectedShape(shape)
+        this.m_selectionModel.setSelectedShape(shape)
     }
 
     resetSelection() {
-        this.m_model.getSelectionModel().setSelectedShape(null)
+        this.m_selectionModel.setSelectedShape(null)
     }
 }
 

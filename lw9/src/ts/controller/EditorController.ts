@@ -1,15 +1,15 @@
 import {EditorModel} from "../model/EditorModel";
-import {EditorRenderer} from "../view/EditorRenderer";
 import {ShapeType} from "../common/ShapeType";
-import { ShapeFactory } from "../factory/ShapeFactory";
+import {ShapeFactory} from "../factory/ShapeFactory";
+import {SelectionModel} from "../model/SelectionModel";
 
 class EditorController {
     private m_model: EditorModel
-    private m_renderer: EditorRenderer
+    private m_selectionModel: SelectionModel
 
-    constructor(model: EditorModel, renderer: EditorRenderer) {
+    constructor(model: EditorModel, selectionModel: SelectionModel) {
         this.m_model = model
-        this.m_renderer = renderer
+        this.m_selectionModel = selectionModel
     }
 
     addShape(shapeType: ShapeType) {
@@ -21,10 +21,11 @@ class EditorController {
     }
 
     deleteSelectedShape() {
-        const selectedShape = this.m_model.canvasModel.getSelectionModel().getSelectedShape()
+        const canvasModel = this.m_model.canvasModel
+        const selectedShape = this.m_selectionModel.getSelectedShape()
         if (selectedShape) {
-            this.m_model.canvasModel.removeShape(selectedShape.id)
-            this.m_model.canvasModel.getSelectionModel().setSelectedShape(null)
+            canvasModel.removeShape(selectedShape.id)
+            this.m_selectionModel.setSelectedShape(null)
         }
     }
 

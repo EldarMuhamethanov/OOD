@@ -4,6 +4,7 @@ import {download} from "../common/download";
 import {ShapeFactory} from "../factory/ShapeFactory";
 import {uploadFile} from "../common/uploadFile";
 import {Signal} from "../common/Signal";
+import {ISerializer, JSONSerializer} from "../serializer/DataSerializer";
 
 const CANVAS_WIDTH = 640
 const CANVAS_HEIGHT = 480
@@ -26,6 +27,7 @@ type EditorState = {
 class EditorModel {
     private m_canvasModel: CanvasModel
     private m_onUploadState = new Signal<void>()
+    private m_modelSerializer: ISerializer = new JSONSerializer()
 
     constructor() {
         this.m_canvasModel = new CanvasModel(CANVAS_WIDTH, CANVAS_HEIGHT)
@@ -62,7 +64,7 @@ class EditorModel {
     }
 
     saveEditor() {
-        download(JSON.stringify(this.m_canvasModel.toJson()), 'editor.json')
+        download(this.m_modelSerializer.serializeCanvas(this.m_canvasModel), 'editor.json')
     }
 }
 

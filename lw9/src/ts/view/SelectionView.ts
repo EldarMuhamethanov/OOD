@@ -4,6 +4,7 @@ import {TagName} from "../common/TagName";
 import {Shape} from "../model/Shape";
 import {SelectionModel} from "../model/SelectionModel";
 import {SelectionController} from "../controller/SelectionController";
+import {CanvasModel} from "../model/CanvasModel";
 
 class SelectionView {
     private m_model: SelectionModel
@@ -13,14 +14,13 @@ class SelectionView {
     private m_parentElement: HTMLElement
     private m_onShapeRectChangeUnsub: (() => void) | null = null
 
-    constructor(model: SelectionModel, parentElement: HTMLElement) {
-        this.m_model = model
-        this.m_controller = new SelectionController(model, this)
+    constructor(model: SelectionModel, canvasModel: CanvasModel, parentElement: HTMLElement) {
         this.m_renderer.addClassName('selection')
+        this.m_model = model
+        this.m_controller = new SelectionController(model, canvasModel)
+
         this.m_parentElement = parentElement
-
         this.m_resizeHandler = new ResizeHandler(this.m_renderer.getDomElement())
-
         this.m_model.onSelectedShapeChanged().add(() => this.handleChangeSelectedShape())
     }
 

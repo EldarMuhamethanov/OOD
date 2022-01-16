@@ -6,6 +6,7 @@ import {SelectionView} from "./SelectionView";
 import {Renderer} from "./Renderer";
 import {TagName} from "../common/TagName";
 import {Shape} from "../model/Shape";
+import {SelectionModel} from "../model/SelectionModel";
 
 
 type ShapeIdToRendererMapItem = {
@@ -16,22 +17,25 @@ type ShapeIdToRendererMapItem = {
 class CanvasRenderer {
     private m_renderer: Renderer = new Renderer(TagName.DIV)
     private m_model: CanvasModel
+    private m_selectionModel: SelectionModel
     private m_controller: CanvasController
 
     private m_selectionView: SelectionView
 
     private m_shapeIdToRendererMap = new Map<string, ShapeIdToRendererMapItem>()
 
-    constructor(model: CanvasModel) {
+    constructor(model: CanvasModel, selectionModel: SelectionModel) {
         this.m_renderer.addClassName('canvas')
         this.m_renderer.setStyle('width', `${model.getWidth()}px`)
         this.m_renderer.setStyle('height', `${model.getHeight()}px`)
 
         this.m_model = model
-        this.m_controller = new CanvasController(model, this)
+        this.m_selectionModel = selectionModel
+        this.m_controller = new CanvasController(model, this.m_selectionModel)
 
         this.m_selectionView = new SelectionView(
-            model.getSelectionModel(),
+            this.m_selectionModel,
+            this.m_model,
             this.m_renderer.getDomElement(),
         )
 
@@ -53,11 +57,12 @@ class CanvasRenderer {
     }
 
     clear() {
+        this.m_model.getShapes().forEach(shape => this.m_controller.removeShape(shape.id))
         this.m_renderer.removeFromDom()
     }
 
     handleDeleteSelectedShape() {
-        const selectedShape = this.m_model.getSelectionModel().getSelectedShape()
+        const selectedShape = this.m_selectionModel.getSelectedShape()
         if (selectedShape) {
             this.m_controller.removeShape(selectedShape.id)
         }
@@ -70,7 +75,7 @@ class CanvasRenderer {
     }
 
     private handleShapeCreate(shape: Shape) {
-        const shapeRenderer = ShapeFactory.createShapeRenderer(shape)
+        const shapeRenderer = ShapeFactory.createShapeRenderer(shape, this.m_model)
         const unsub = shapeRenderer.getOnSelectSignal().add(() => this.m_controller.selectShape(shape))
         this.m_shapeIdToRendererMap.set(shape.id, {
             view: shapeRenderer,
@@ -82,7 +87,7 @@ class CanvasRenderer {
     private handleShapeRemove(shapeId: string) {
         const mapItem = this.m_shapeIdToRendererMap.get(shapeId)
         if (mapItem) {
-            mapItem.view.renderer.removeFromDom()
+            mapItem.view.removeFromDom()
             mapItem.unsubHandlers.forEach(unsubHandler => unsubHandler())
             this.m_shapeIdToRendererMap.delete(shapeId)
         }

@@ -5,21 +5,23 @@ import {Signal} from "../common/Signal";
 import {CanvasRenderer} from "./CanvasRenderer";
 import {Renderer} from "./Renderer";
 import { TagName } from "../common/TagName";
+import {CanvasModel} from "../model/CanvasModel";
 
 
 abstract class ShapeRenderer
 {
-    private m_renderer: Renderer = new Renderer(TagName.DIV)
     private readonly m_model: Shape
     private readonly m_controller: ShapeController
     private m_svgElement: SVGGraphicsElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
     private onSelectSignal = new Signal<void>()
 
-    protected constructor(model: Shape) {
-        this.m_renderer.addClassName('shape')
+    protected constructor(model: Shape, canvasModel: CanvasModel) {
+        this.m_svgElement.classList.add('shape')
+        this.m_svgElement.style.setProperty('pointer-events', 'none')
+        this.m_svgElement.style.setProperty('pointer-events', 'none')
 
         this.m_model = model
-        this.m_controller = new ShapeController(model, this)
+        this.m_controller = new ShapeController(model, canvasModel)
 
         this.m_model.getOnRectChange().add(() => this.rerender())
     }
@@ -36,10 +38,11 @@ abstract class ShapeRenderer
         return this.m_controller
     }
 
-    get renderer() {
-        return this.m_renderer
+    removeFromDom() {
+        this.m_svgElement.remove()
     }
 
+    protected abstract updateSvgBounds(): void
     protected abstract getShapeHtmlImpl(): SVGGraphicsElement
 
     private rerender() {
@@ -48,27 +51,24 @@ abstract class ShapeRenderer
         const width = this.m_model.width
         const height = this.m_model.height
 
-        this.m_renderer.setStyle('left', `${left}px`)
-        this.m_renderer.setStyle('top', `${top}px`)
-        this.m_renderer.setStyle('width', `${width}px`)
-        this.m_renderer.setStyle('height', `${height}px`)
+        this.m_svgElement.style.setProperty('left', `${left}px`)
+        this.m_svgElement.style.setProperty('top', `${top}px`)
+        this.m_svgElement.style.setProperty('width', `${width}px`)
+        this.m_svgElement.style.setProperty('height', `${height}px`)
 
         this.m_svgElement.setAttribute('viewPort', `0 0 ${width} ${height}`)
-        this.m_svgElement.innerHTML = ''
-        const impl = this.getShapeHtmlImpl()
-        this.m_svgElement.appendChild(impl)
+        this.updateSvgBounds()
     }
 
     render(parentElement: HTMLElement) {
-        this.m_renderer.removeFromDom()
+        this.removeFromDom()
         this.m_svgElement.setAttribute('xmlns', 'http://www.w3.org/2000/svg')
-        this.m_svgElement.setAttribute('width', '100%')
-        this.m_svgElement.setAttribute('height', '100%')
         this.rerender()
+        const svgImpl = this.getShapeHtmlImpl()
+        svgImpl.style.setProperty('pointer-events', 'all')
+        this.m_svgElement.appendChild(svgImpl)
 
-        const shapeHTML = this.m_renderer.getDomElement()
-
-        const dndHandler = new DragNDropHandler(shapeHTML)
+        const dndHandler = new DragNDropHandler(svgImpl)
         dndHandler.getOnMoveSignal().add(newPosition => {
             const parentBounds = parentElement.getBoundingClientRect()
             this.m_controller.shapeMove({
@@ -77,13 +77,12 @@ abstract class ShapeRenderer
             })
         })
 
-        this.m_renderer.addEventListener('mousedown', e => {
+        svgImpl.addEventListener('mousedown', e => {
             e.preventDefault()
             this.onSelectSignal.dispatch()
         })
 
-        this.m_renderer.appendChild(this.m_svgElement)
-        parentElement.appendChild(shapeHTML)
+        parentElement.appendChild(this.m_svgElement)
     }
 }
 
